@@ -50,7 +50,7 @@ def index(request):
     movie_info={}
     
     for i in movie_data:
-        print(i.movie_id)
+        # print(i.movie_id)
         movie_info[i.movie_id]={
             "poster_path":[i.poster_path],
             "title":[i.title],

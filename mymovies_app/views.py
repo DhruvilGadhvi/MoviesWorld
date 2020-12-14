@@ -13,14 +13,14 @@ def index(request):
 
     if request.method == 'GET':
         for i in range(len(data['results'])):
-            movie_id = data['results'][i]['id']
+            # movie_id = data['results'][i]['id']
             title = data['results'][i]['title']
             overview = data['results'][i]['overview']
             popularity = data['results'][i]['popularity']
             poster_path = data['results'][i]['poster_path']
 
-            if not Movie_Data.objects.filter(movie_id= movie_id,title=title).exists():
-                Movie_Data.objects.create(movie_id =movie_id,title=title,poster_path =poster_path ,overview =overview ,popularity=popularity)
+            if not Movie_Data.objects.filter(title=title).exists():
+                Movie_Data.objects.create(title=title,poster_path =poster_path ,overview =overview ,popularity=popularity)
                 print("Data Created")
             
             # else:

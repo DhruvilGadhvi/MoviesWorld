@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $.post("/mymovies_app/", function (response) {
         // alert(response);
-        console.log(response);
+        // console.log(response[1]);
         // $("#img0").attr('src', 'https://image.tmdb.org/t/p/w500/' + (response.results[4].poster_path)).height(250).width(250)
         // $("#original_title0").append(response.results[4].original_title)
         // $("#popularity0").append(response.results[4].popularity)
@@ -9,8 +9,9 @@ $(document).ready(function () {
 
         //using .each with counter
         var index=0;
-        $.each(response.movie_data, function (i,value) {
-            console.log(index,value.title)
+        $.each(response, function (i,value) {
+            // console.log(value)
+            // console.log(index,value.title)
             $("#name" + index).append(value.title)
             $("#date" + index).append(value.release_date)
             $("#overview" + index).append(value.overview)

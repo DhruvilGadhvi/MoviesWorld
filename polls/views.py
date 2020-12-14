@@ -14,7 +14,7 @@ def home(request):
     # json_data = {'xval': 10, 'yval': 10}
     # return HttpResponse(json_data,content_type="application/json")
     if request.method == "GET":
-        return render(request,'home.html') 
+        return render(request,'index1.html') 
         # return HttpResponse('Data received')
     
     response = requests.get('https://api.themoviedb.org/3/movie/top_rated?api_key=52364270e03d88b2f26ad29cff466e81&language=en-US&page=1')

@@ -10,7 +10,8 @@ import serializers
 @csrf_exempt
 def index(request):
     if request.method == 'GET':
-        return render(request, 'index1.html')
+
+        return render(request, 'index.html')
 
     # save to data to database
     '''response = requests.get(
